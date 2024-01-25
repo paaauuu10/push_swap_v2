@@ -6,11 +6,32 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 23:20:57 by paubotargue       #+#    #+#             */
-/*   Updated: 2023/12/28 01:13:18 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/01/25 12:58:23 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+//#include <stdio.h>
+
+/*static void print_stack(t_stack *stack)
+{
+    while (stack) {
+        printf("%d ", stack->value);
+        stack = stack->next;
+    }
+    printf("\n");
+}*/
+
+static int	check_str(char *str)
+{
+	while (*str)
+	{
+		if (*str != ' ')
+			return (1);
+		str++;
+	}
+	return (0);
+}
 
 int	main(int argc, char *argv[])
 {
@@ -19,7 +40,7 @@ int	main(int argc, char *argv[])
 
 	a = NULL;
 	b = NULL;
-	if (argc == 1)
+	if ((argc == 1 || (argc == 2 && !check_str(argv[1]))))
 		return (1);
 	else if (argc == 2 && argv[1][0] == '\0')
 		return (1);
